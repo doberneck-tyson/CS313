@@ -6,16 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<header>
-    <nav>
-        <ul>
-            <li><a href="./home.php">Home</a></li>
-            <li><a href="./about-us.php">About Us</a></li>
-            <li><a href="./login.php">Login</a></li>
-        </ul>
-    </nav>
-</header>
 <body>
+    <header>
+        <?php include "header.php"?>
+    </header>
     <h1>Welcome to Rexburg Exotic Meats, You are not logged in.</h1>
 </body>
 </html>
