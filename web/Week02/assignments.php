@@ -10,5 +10,9 @@
 </head>
 <body>
 <h1>Coming Soon...</h1>
+
+<?php
+echo "This will be have more info soon!";
+?>
 </body>
 </html>

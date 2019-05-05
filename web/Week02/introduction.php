@@ -9,7 +9,18 @@
     <link rel="stylesheet" href="introduction.css">
 </head>
 <body>
-<h1>Tyson's Homepage</h1>
+<h1 id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Tyson's Homepage</h1>
+
+<script>
+    function mouseOver() {
+        document.getElementById("demo").style.color = "red";
+    }
+
+    function mouseOut() {
+        document.getElementById("demo").style.color = "black";
+    }
+</script>
+
 <h3>Hello, my name is Tyson Doberneck. I am majoring in Software Engineering and have a year until I graduate. I am originally from
 Galt, CA and I served my mission in the Florida, Tallahassee Mission. My wife and I are expecting our first child mid July and we could
 not be more terrified and excited for anything in our lives. I love to kayak, rock climb and play retro video games in my spare time.</h3>
