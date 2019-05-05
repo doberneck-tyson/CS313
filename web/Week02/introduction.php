@@ -14,7 +14,7 @@
 Galt, CA and I served my mission in the Florida, Tallahassee Mission. My wife and I are expecting our first child mid July and we could
 not be more terrified and excited for anything in our lives. I love to kayak, rock climb and play retro video games in my spare time.</h3>
 
-<img src="./image.jpg" alt="Wife and I" width="200"
-     height="80">
+<img src="./image.jpg" alt="Wife and I" width="500"
+     height="500">
 </body>
 </html>
