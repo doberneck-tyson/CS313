@@ -16,5 +16,8 @@ not be more terrified and excited for anything in our lives. I love to kayak, ro
 
 <img src="./image.jpg" alt="Wife and I" width="500"
      height="500">
+
+<h3>Click Here to go to my Assignments Page</h3>
+<a href="./assignments.php">Click Here to go to my Assignments Page</a>
 </body>
 </html>
