@@ -2,14 +2,11 @@
 session_start();
 $_SESSION["item"] = $_POST["item"];
 ?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Browse | Tyson's Retro Supply</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Items</title>
     <link rel="stylesheet" type="text/css" href="shoppingCart.css"/>
     <script type="text/javascript">
         var alerted = localStorage.getItem('alerted') || '';
@@ -21,58 +18,63 @@ $_SESSION["item"] = $_POST["item"];
 </head>
 <body>
 <header id="bHeader">
-    <h1>Browse Through Our Items!</h1>
+    <h1>Browse Through These Amazing Items We have to Offer!</h1>
 </header>
-<br><br>
+<br/><br/>
 <form id="bForm" method="post">
     <table>
         <tr>
             <th>Select Item</th>
             <th>Item Image</th>
             <th>Item Name</th>
-            <th>Item Price</th>
-            <th>Item Description</th>
+            <th>Price</th>
+            <th>Description</th>
         </tr>
-
         <tr>
-            <td><input id="browse" type="checkbox" name="item[0]" value="NES"</td>
-            <td><img src="nes.jpg"</td>
-            <td> Nintendo Entertainment System</td>
-            <td> $60.00</td>
-            <td> Fully Refurbished Nintendo NES with chords and 2 controllers.</td>
+            <td><input id="browse" type="checkbox" name="item[0]" value="Shower Curtain"></td>
+            <td><img src="shower.jpg"/></td>
+            <td>Shower Curtain</td>
+            <td>$15.00</td>
+            <td>Brighten up your bathroom with this elegant shower curtain!</td>
         </tr>
-
         <tr>
-            <td><input id="browse" type="checkbox" name="item[0]" value="NES"</td>
-            <td><img src="ps1.jpg"</td>
-            <td> Sony Playstation 1</td>
-            <td> $50.00</td>
-            <td> Fully Refurbished PS1 with chords and 2 controllers.</td>
+            <td><input id="browse" type="checkbox" name="item[1]" value="Lava Lamp"></td>
+            <td><img src="lavaLamp.jpg"/></td>
+            <td>Lava Lamp</td>
+            <td>$10.00</td>
+            <td>Experience an unnatural glow with these elegant lava lamps!</td>
         </tr>
-
         <tr>
-            <td><input id="browse" type="checkbox" name="item[0]" value="NES"</td>
-            <td><img src="sega.jpg"</td>
-            <td> Sega Genesis</td>
-            <td> $70.00</td>
-            <td> Fully Refurbished NSega Genesis with chords and 2 controllers.</td>
+            <td><input id="browse" type="checkbox" name="item[2]" value="Scented Candles"></td>
+            <td><img src="candles.jpg"/></td>
+            <td>Scented Candle</td>
+            <td>$10.00</td>
+            <td>Enjoy a fresh scent with any of our scented candles!</td>
         </tr>
-
         <tr>
-            <td><input id="browse" type="checkbox" name="item[0]" value="NES"</td>
-            <td><img src="atari.jpg"</td>
-            <td> Atari 2600</td>
-            <td> $100.00</td>
-            <td> Fully Refurbished Atari 2600 with chords and 2 controllers.</td>
+            <td><input id="browse" type="checkbox" name="item[3]" value="Vase"></td>
+            <td><img src="vase.jpg"/></td>
+            <td>Vase</td>
+            <td>$20.00</td>
+            <td>Decorate your living space with these fancy vases!</td>
+        </tr>
+        <tr>
+            <td><input id="browse" type="checkbox" name="item[4]" value="Rose Gold Dish Set"></td>
+            <td><img src="dishSet.jpg"/></td>
+            <td>Rose Gold Dish Set</td>
+            <td>$25.00</td>
+            <td>Impress your guests with this assorted set of rose gold plates, bowls, and silverware!</td>
         </tr>
     </table>
-    <br>
-    <div class="btn-2">
-        <button onclick='window.location.href="viewCart.php"' type="button"View Cart</button>
+    <br/>
+    <div class="button">
+        <button name="bSubmit" type="submit">Add items to your cart</button>
+        <br/><br/>
     </div>
-    <br>
-
+    <div class="btn-2">
+        <button onclick='window.location.href="viewCart.php"' type="button">View the cart</button>
+    </div>
+    <br/>
 </form>
-
 </body>
 </html>
