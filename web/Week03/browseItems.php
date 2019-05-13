@@ -52,7 +52,7 @@ $_SESSION["item"] = $_POST["item"];
 
         <tr>
             <td><input id="browse" type="checkbox" name="item[0]" value="NES"</td>
-            <td><img src="nes.jpg"</td>
+            <td><img src="sega.jpg"</td>
             <td> Sega Genesis</td>
             <td> $70.00</td>
             <td> Fully Refurbished NSega Genesis with chords and 2 controllers.</td>
@@ -60,7 +60,7 @@ $_SESSION["item"] = $_POST["item"];
 
         <tr>
             <td><input id="browse" type="checkbox" name="item[0]" value="NES"</td>
-            <td><img src="nes.jpg"</td>
+            <td><img src="atari.jpg"</td>
             <td> Atari 2600</td>
             <td> $100.00</td>
             <td> Fully Refurbished Atari 2600 with chords and 2 controllers.</td>
