@@ -21,7 +21,7 @@ $_SESSION["item"] = $_POST["item"];
 </head>
 <body>
 <header id="bHeader">
-    <h1>Browse Through Our Items!</h1>
+    <h1>Tyson's Retro Supply</h1>
 </header>
 <br><br>
 <form id="bForm" method="post">
