@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Confirmation</title>
+    <title>Confirm | Tyson's Retro Supply</title>
     <link rel="stylesheet" type="text/css" href="shoppingCart.css"/>
 </head>
 <body>
