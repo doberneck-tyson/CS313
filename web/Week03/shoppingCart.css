@@ -1,0 +1,69 @@
+body {
+    background-color: #8d8aa8;
+}
+
+#bHeader {
+    background-color: #7035b3;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+#bHeader h1 {
+    text-align: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    color: #a88d33;
+}
+
+#bForm {
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid black;
+    border-radius: 3px;
+    background-color: #ced9bf;
+}
+
+#bForm table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 20px;
+}
+
+#bForm table,tr,th,td {
+    border: 1px solid black;
+}
+
+#bForm table td img {
+    border-radius: 50%;
+    border: 3px solid black;
+}
+
+#bForm .button {
+    display: block;
+    max-width: 160px;
+    margin: 0 auto;
+}
+
+#bForm .btn-2 {
+    display: block;
+    max-width: 110px;
+    margin: 0 auto;
+}
+
+.flex {
+    display : flex;
+}
+
+.flex-child {
+    flex: 1 1 auto;
+    margin-right: 5px;
+}
+
+.itemView {
+    text-align: center;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    background-color: #ced9bf;
+    border-radius: 3px;
+    border: 3px solid black;
+}
