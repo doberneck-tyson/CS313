@@ -35,16 +35,16 @@ catch (PDOException $ex)
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
-$statement = $db->prepare("SELECT section_id, section_name, section_description FROM Section");
+$statement = $db->prepare("SELECT section_name, section_description FROM Section");
 $statement->execute();
 
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-    $section_id = $row['section_id'];
+//    $section_id = $row['section_id'];
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
 
-    echo "<p>{$section_id}, {$section_name}, {$section_description}<p>";
+    echo "<p>{$section_name}, {$section_description}<p>";
 }
 
 
