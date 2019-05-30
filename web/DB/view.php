@@ -52,7 +52,7 @@ foreach($db->query('SELECT section_id, section_name, section_description FROM Se
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
 
-    echo "<p>{$section_id}, {$section_name}, {$section_description}<p>";
+    echo "<p>{$section_id}, {$section_name}, {$section_description}</p>";
 }
 ?>
 </body>
