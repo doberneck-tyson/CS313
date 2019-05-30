@@ -36,4 +36,3 @@ CREATE TABLE Post(
     user_id INT,
     votes INT
 );
-

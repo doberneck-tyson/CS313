@@ -29,7 +29,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $title = $row['title'];
     $content = $row['title'];
 
-    echo "<p>$ $post_id, $title, $content"<p>;
+    echo "<p>$ $post_id, $title, $content<p>";
 }
 
 

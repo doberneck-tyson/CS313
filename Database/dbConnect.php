@@ -7,7 +7,7 @@ function get_db() {
         $dbUrl = getenv('DATABASE_URL');
         if (!isset($dbUrl) || empty($dbUrl)) {
 
-            $dbUrl = "postgres://storytime_user:ta_pass@localhost:5432/scripture_ta";
+            $dbUrl = "postgres://storytime_user:ta_pass@localhost:5432/storytime_user";
 
         }
         $dbopts = parse_url($dbUrl);
