@@ -20,16 +20,16 @@ $db = get_db();
 
 <?php
 
-$statement = $db->prepare("SELECT post_id, title, content, FROM post");
+$statement = $db->prepare("SELECT section_id, section_name, section_description, FROM Section ");
 $statement->execute();
 
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-    $post_id = $row['post_id'];
-    $title = $row['title'];
-    $content = $row['title'];
+    $section_id = $row['section_id'];
+    $section_name = $row['section_name'];
+    $section_description = $row['section_description'];
 
-    echo "<p>$ $post_id, $title, $content<p>";
+    echo "<p>$ $section_id, $section_name, $section_description<p>";
 }
 
 
