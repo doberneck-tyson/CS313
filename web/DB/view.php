@@ -20,7 +20,7 @@ $db = get_db();
 
 <?php
 
-$statement = $db->prepare("SELECT section_id, section_name, section_description FROM Section ");
+$statement = $db->prepare("SELECT section_id, section_name, section_description FROM Section");
 $statement->execute();
 
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -29,11 +29,8 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
 
-    echo "<p>$ $section_id, $section_name, $section_description<p>";
+    echo "<p>{$section_id}, {$section_name}, {$section_description}<p>";
 }
-
-
-
 
 ?>
 </body>
