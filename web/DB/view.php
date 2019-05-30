@@ -48,13 +48,13 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 }
 
 
-foreach($db->query('SELECT section_id, section_name, section_description FROM Section')as $row){
-    $section_id = $row['section_id'];
-    $section_name = $row['section_name'];
-    $section_description = $row['section_description'];
-
-    echo "<p>{$section_id}, {$section_name}, {$section_description}</p>";
-}
+//foreach($db->query('SELECT section_id, section_name, section_description FROM Section')as $row){
+//    $section_id = $row['section_id'];
+//    $section_name = $row['section_name'];
+//    $section_description = $row['section_description'];
+//
+//    echo "<p>{$section_id}, {$section_name}, {$section_description}</p>";
+//}
 ?>
 </body>
 </html>
