@@ -48,7 +48,7 @@ catch (PDOException $ex)
 //}
 
 
-foreach($db->query('SELECT section_id, section_name, section_description FROM Section')as $row){
+foreach($db->query('SELECT section_id, section_name, section_description FROM `Section`')as $row){
     $section_id = $row['section_id'];
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
