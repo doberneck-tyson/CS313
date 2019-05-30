@@ -1,9 +1,3 @@
-<?php
-
-
-$db = get_db();
-
-?>
 
 <!doctype html>
 <html lang="en">
