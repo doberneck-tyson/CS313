@@ -1,3 +1,3 @@
 <?php
-header("Location: ../DB/view.php")
+header("Location: DB/view.php")
 ?>
