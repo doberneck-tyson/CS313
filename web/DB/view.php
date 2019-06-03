@@ -1,5 +1,28 @@
 <?php
-var_dump($_POST);
+
+try
+{
+    $dbUrl = getenv('DATABASE_URL');
+    $dbOpts = parse_url($dbUrl);
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"],'/');
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $ex)
+{
+    echo 'Error!: ' . $ex->getMessage();
+    die();
+}
+
+if(isset($_POST)){
+    $Query = "INSERT INTO post(title, content) VALUES ('".$_POST['title']."','".$_POST['content']."')";
+    $statement = $db->prepare($Query);
+    $statement->execute();
+}
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 ?>
@@ -21,32 +44,16 @@ error_reporting(E_ALL | E_STRICT);
 <form method="POST" action="view.php">
     <div>
 
-        <input type="text" name="title">Title
-        <input type="text" name="content">Content
-        <input type="submit">Submit
+        Title <input type="text" name="title">
+        Content<input type="text" name="content">
+        <input type="submit">
     </div>
 
 </form>
 
 <?php
 
-try
-{
-    $dbUrl = getenv('DATABASE_URL');
-    $dbOpts = parse_url($dbUrl);
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $ex)
-{
-    echo 'Error!: ' . $ex->getMessage();
-    die();
-}
+
 $statement = $db->prepare("SELECT section_id, section_name, section_description FROM SECTION ");
 $statement->execute();
 
