@@ -63,7 +63,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
 
-    echo "<p>{$section_id}, {$section_name}, {$section_description}<p>";
+    echo "<p><a href='view.php?id=". $section_id."'> {$section_name}</a>, {$section_description}<p>";
 }
 
 ?>
