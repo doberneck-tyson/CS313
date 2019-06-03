@@ -43,6 +43,8 @@ CREATE TABLE Post(
     link VARCHAR(255),
     user_id INT FOREIGN KEY,
     votes INT
+    section_id INT,
+    FOREIGN KEY (section_id) REFERENCES Section(section_id);
 );
 
 INSERT INTO StorytimeAdmin (username,password, display_name) VALUES ('tyson','pass', 'TforTyson');
