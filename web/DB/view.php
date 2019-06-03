@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 ?>
@@ -15,6 +16,17 @@ error_reporting(E_ALL | E_STRICT);
 <body>
 
 <h1> Storytime</h1>
+
+
+<form method="POST" action="view.php">
+    <div>
+
+        <input type="text" name="title">Title
+        <input type="text" name="content">Content
+        <input type="submit">Submit
+    </div>
+
+</form>
 
 <?php
 
@@ -35,7 +47,7 @@ catch (PDOException $ex)
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
-$statement = $db->prepare("SELECT section_id, section_name, section_description FROM section");
+$statement = $db->prepare("SELECT section_id, section_name, section_description FROM SECTION ");
 $statement->execute();
 
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -47,14 +59,6 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "<p>{$section_id}, {$section_name}, {$section_description}<p>";
 }
 
-
-foreach($db->query('SELECT section_id, section_name, section_description FROM section')as $row){
-    $section_id = $row['section_id'];
-    $section_name = $row['section_name'];
-    $section_description = $row['section_description'];
-
-    echo "<p>{$section_id}, {$section_name}, {$section_description}</p>";
-}
 ?>
 </body>
 </html>

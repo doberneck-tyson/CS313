@@ -41,7 +41,7 @@ CREATE TABLE Post(
     title VARCHAR(30),
     content VARCHAR(255),
     link VARCHAR(255),
-    user_id INT,
+    user_id INT FOREIGN KEY,
     votes INT
 );
 
