@@ -41,7 +41,7 @@ error_reporting(E_ALL | E_STRICT);
 <h1> Storytime</h1>
 
 <?php
-echo " <form method='POST' action='view.php?id='.>"
+echo " <form method='POST' action='view.php?id='".$_GET['id']."'>";
 ?>
 <div>
 
