@@ -19,7 +19,7 @@ catch (PDOException $ex)
 }
 
 if(isset($_POST['title']) && (isset($_GET['id']))){
-    $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_GET['id'].")";
+    $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_GET[1].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
