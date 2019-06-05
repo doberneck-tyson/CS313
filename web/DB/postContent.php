@@ -25,28 +25,21 @@ if(isset($_POST['title'])){
 }
 
 if(isset($_GET["id"])) {
-    echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
+    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'>
 <div>
 
-    Title <input type="text" name="title"><br><br>
     Content<input type="text" name="content">
-    <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
+    <button type="submit" name="submit" value="' . $_GET["post_id"] . '">Submit</button>
 </div>
 
 </form>';
-    $statement = $db->prepare("SELECT title, content, post_id FROM POST WHERE section_id = " .$_GET['id']);
+    $statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE postcom = " .$_GET['post_id']);
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-        $title = $row['title'];
-        $content = $row['content'];
-        $post_id = $row['post_id'];
-
-        echo "<p><a href='postContent.php?id=".$_GET['id']."&post_id=".$post_id."'> $title</a><p>";
-        if(isset($_GET['post_id'])&& $_GET['post_id']== $post_id){
-            echo "it worked";
-        }
+        $content = $row['post_comment'];
+        echo $content;
     }
 
 }
