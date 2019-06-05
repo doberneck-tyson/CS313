@@ -19,7 +19,7 @@ catch (PDOException $ex)
 }
 
 if(isset($_POST['title']) && (isset($_GET['id']))){
-    $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',1)";
+    $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
@@ -40,17 +40,7 @@ error_reporting(E_ALL | E_STRICT);
 
 <h1> Storytime</h1>
 
-<?php
-echo " <form method='POST' action='view.php?id='".$_GET['id']."'>";
-?>
-<div>
 
-    Title <input type="text" name="title">
-    Content<input type="text" name="content">
-    <input type="submit">
-</div>
-
-</form>
 
 <?php
 
@@ -67,6 +57,18 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "<p><a href='view.php?id=". $section_id."'> {$section_name}</a>, {$section_description}<p>";
 }
 
+if(isset($_GET["id"])) {
+    echo '<form method="post" action="view.php">
+<div>
+
+    Title <input type="text" name="title"><br><br>
+    Content<input type="text" name="content">
+    <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
+</div>
+
+</form>';
+}
 ?>
+
 </body>
 </html>
