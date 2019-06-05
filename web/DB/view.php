@@ -58,6 +58,16 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 }
 
 if(isset($_GET["id"])) {
+    $statement = $db->prepare("SELECT title, content FROM POST ");
+    $statement->execute();
+
+    while($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        $title = $row['title'];
+        $content = $row['content'];
+
+        echo "<p>$title $content<p>";
+    }
     echo '<form method="post" action="view.php">
 <div>
 
