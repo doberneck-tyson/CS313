@@ -25,7 +25,7 @@ if(isset($_POST['title'])){
 }
 
 if(isset($_GET["id"])) {
-    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'>
+    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
 
     Content<input type="text" name="content">
