@@ -34,15 +34,19 @@ if(isset($_GET["id"])) {
 </div>
 
 </form>';
-    $statement = $db->prepare("SELECT title, content FROM POST WHERE section_id = " .$_GET['id']);
+    $statement = $db->prepare("SELECT title, content, post_id FROM POST WHERE section_id = " .$_GET['id']);
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
         $title = $row['title'];
         $content = $row['content'];
+        $post_id = $row['post_id'];
 
-        echo "<p>$title $content<p>";
+        echo "<p><a href='nav.php?id=".$_GET['id']."&post_id=".$post_id."'> $title</a><p>";
+        if(isset($_GET['post_id'])&& $_GET['post_id']== $post_id){
+            echo "it worked";
+        }
     }
 
 }
