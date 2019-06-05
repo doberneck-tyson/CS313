@@ -54,30 +54,10 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
 
-    echo "<p><a href='view.php?id=". $section_id."'> {$section_name}</a>, {$section_description}<p>";
+    echo "<p><a href='nav.php?id=". $section_id."'> {$section_name}</a>, {$section_description}<p>";
 }
 
-if(isset($_GET["id"])) {
-    $statement = $db->prepare("SELECT title, content FROM POST WHERE section_id = " .$_GET['id']);
-    $statement->execute();
 
-    while($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-        $title = $row['title'];
-        $content = $row['content'];
-
-        echo "<p>$title $content<p>";
-    }
-    echo '<form method="post" action="view.php">
-<div>
-
-    Title <input type="text" name="title"><br><br>
-    Content<input type="text" name="content">
-    <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
-</div>
-
-</form>';
-}
 ?>
 
 </body>
