@@ -58,7 +58,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 }
 
 if(isset($_GET["id"])) {
-    $statement = $db->prepare("SELECT title, content FROM POST ");
+    $statement = $db->prepare("SELECT title, content FROM POST WHERE section_id = " .$_GET['id']);
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
