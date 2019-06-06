@@ -25,8 +25,9 @@ if(isset($_POST['title'])){
 }//change this to insert into comment table.
 //run query that runs post content SELECT CONTENT FROM POST WHERE POST_ID = $_GET[POST_ID]
 //ECHO THE CONTENT AT TOP
+
 if(isset($_POST['content'])){
-    $Query = "SELECT CONTENT FROM POST WHERE POST_ID = " .$_GET['post_id'];
+    $Query = "SELECT CONTENT FROM POST WHERE post_id = " .$_GET['post_id'];
     $statement = $db->prepare($Query);
     $statement->execute();
 

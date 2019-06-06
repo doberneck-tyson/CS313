@@ -51,7 +51,7 @@ if(isset($_GET["id"])) {
         $content = $row['content'];
         $post_id = $row['post_id'];
 
-        echo "<p><a href='postContent.php?id=".$_GET['id']."&post_id=".$post_id."'> $title</a><p>";
+        echo "<p><a href='postContent.php?id=".$_GET['id']."&post_id=".$post_id."'> $content</a><p>";
         if(isset($_GET['post_id'])&& $_GET['post_id']== $post_id){
             echo "it worked";
         }
