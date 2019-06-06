@@ -1,5 +1,14 @@
 <?php
 
+$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
+$statement->execute();
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    $section_name = $row['section_name'];
+    echo 'The section name is: ';
+    echo "{$section_name}";
+}
+
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -18,15 +27,7 @@ catch (PDOException $ex)
     die();
 }
 
-$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
-$statement->execute();
-while($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
 
-    $section_name = $row['section_name'];
-    echo 'The section name is: ';
-    echo "{$section_name}";
-}
 
 if(isset($_POST['title'])){
     $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
