@@ -1,14 +1,5 @@
 <?php
 
-$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
-$statement->execute();
-while($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-    $section_name = $row['section_name'];
-    echo 'The section name is: ';
-    echo "{$section_name}";
-}
-
 try
 {
     $dbUrl = getenv('DATABASE_URL');
@@ -27,7 +18,15 @@ catch (PDOException $ex)
     die();
 }
 
-
+$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
+$statement->execute();
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    $section_name = $row['section_name'];
+    echo 'Welcome to the ',
+    "{$section_name}",
+    'category. Feel free to post any relevant stories relating to this category.';
+}
 
 if(isset($_POST['title'])){
     $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
@@ -37,14 +36,11 @@ if(isset($_POST['title'])){
 
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
-
-<div>
-    
-    Title <input type="text" name="title"><br><br>
-    Content<input type="text" name="content">
-    <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
-</div>
-
+    <div>
+        Title <input type="text" name="title"><br><br>
+        Content<input type="text" name="content">
+        <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
+    </div>
 </form>';
     $statement = $db->prepare("SELECT title, content, post_id FROM POST WHERE section_id = " .$_GET['id']);
     $statement->execute();
