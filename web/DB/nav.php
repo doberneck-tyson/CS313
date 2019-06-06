@@ -31,12 +31,13 @@ $statement->execute();
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     $section_name = $row['section_name'];
-    echo "", "Welcome to the ", "<strong>{$section_name}</strong>", ' category. Feel free to post any relevant stories relating to the ', $section_name, ' genre';
+    echo 'Welcome to the', '<strong>{$section_name}</strong>', ' category. Feel free to post any relevant stories relating to the ', $section_name, ' genre';
 }
 
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
     <div>
+    <br><br>
         Title <input type="text" name="title"><br><br>
         Content<input type="text" name="content">
         <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
