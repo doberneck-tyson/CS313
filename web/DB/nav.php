@@ -25,7 +25,16 @@ if(isset($_POST['title'])){
     $statement = $db->prepare($Query);
     $statement->execute();
 }
-
+$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
+$statement->execute();
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    $section_name = $row['section_name'];
+    echo 'Welcome to the ',
+    "<strong>{$section_name}</strong>",
+    ' category. Feel free to post any relevant stories relating to the.',
+    $section_name, ' genre';
+}
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
     <div>
@@ -48,15 +57,7 @@ if(isset($_GET["id"])) {
             echo "it worked";
         }
     }
-    $statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
-    $statement->execute();
-    while($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-        $section_name = $row['section_name'];
-        echo 'Welcome to the ',
-        "<strong>{$section_name}</strong>",
-        ' category. Feel free to post any relevant stories relating to this category.';
-    }
+
 }
 
 
