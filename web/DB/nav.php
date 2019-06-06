@@ -18,8 +18,6 @@ catch (PDOException $ex)
     die();
 }
 
-
-
 if(isset($_POST['title'])){
     $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
@@ -28,17 +26,19 @@ if(isset($_POST['title'])){
 
 $statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
 $statement->execute();
+
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     $section_name = $row['section_name'];
-    echo "test " ."Welcome to the ";
-    echo "<strong>$section_name</strong>";
-    echo " category. Feel free to post any relevant stories relating to the " . $section_name . " genre";
+    echo "Welcome to the ";
+
+    echo " category. Feel free to post any stories relating to the " . $section_name . " genre";
 }
 
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
     <div>
+    <br><br>
         Title <input type="text" name="title"><br><br>
         Content<input type="text" name="content">
         <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
