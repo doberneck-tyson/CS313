@@ -23,7 +23,15 @@ if(isset($_POST['title'])){
     $statement = $db->prepare($Query);
     $statement->execute();
 }
+$statement = $db->prepare("SELECT section_name FROM SECTION ");
+$statement->execute();
 
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    echo 'The section name is: ';
+    $section_name = $row['section_name'];
+    echo "{$section_name}";
+}
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
 
@@ -49,15 +57,7 @@ if(isset($_GET["id"])) {
             echo "it worked";
         }
     }
-    $statement = $db->prepare("SELECT section_name FROM SECTION ");
-    $statement->execute();
 
-    while($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-        echo 'The section name is: ';
-        $section_name = $row['section_name'];
-        echo "{$section_name}";
-    }
 }
 
 
