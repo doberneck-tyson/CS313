@@ -18,12 +18,13 @@ catch (PDOException $ex)
     die();
 }
 
-$statement = $db->prepare("SELECT section_name FROM SECTION " .$_GET['id']);
+$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
 $statement->execute();
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-    echo 'The section name is: ';
+
     $section_name = $row['section_name'];
+    echo 'The section name is: ';
     echo "{$section_name}";
 }
 
