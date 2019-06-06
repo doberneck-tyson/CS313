@@ -18,15 +18,22 @@ catch (PDOException $ex)
     die();
 }
 
-if(isset($_POST['title'])){
+
+
+
+
+if(isset($_POST['post_comment'])){
     $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
     $statement = $db->prepare($Query);
     $statement->execute();
+
 }//change this to insert into comment table.
 //run query that runs post content SELECT CONTENT FROM POST WHERE POST_ID = $_GET[POST_ID]
 //ECHO THE CONTENT AT TOP
 
 
+
+//Leave a comment box
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
@@ -44,5 +51,8 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $content = $row['post_comment'];
     echo $content;
 }
+
+
+
 
 }

@@ -18,12 +18,15 @@ catch (PDOException $ex)
     die();
 }
 
+//initiates query
 if(isset($_POST['title'])){
     $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
 
+
+//Welcome statement
 $statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
 $statement->execute();
 
@@ -36,6 +39,8 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo " category. Feel free to post any stories relating to the " . $section_name . " genre";
 }
 
+
+//All of the buttons
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
     <div>
