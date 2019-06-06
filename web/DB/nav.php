@@ -27,14 +27,7 @@ if(isset($_POST['title'])){
 if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
 <div>
-    $statement = $db->prepare("SELECT section_name, FROM SECTION ");
-$statement->execute();
-
-while($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-    $section_name = $row[\'section_name\'];
-    echo "This is the section name:{$section_name}";
-}
+    echo "<p>Test<a href=\'nav.php?id=". $section_id."\'> {$section_name}</a>, {$section_description}<p>";
     Title <input type="text" name="title"><br><br>
     Content<input type="text" name="content">
     <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
