@@ -20,14 +20,24 @@ catch (PDOException $ex)
 
 
 
+$statement = $db->prepare("SELECT content FROM POST WHERE section_id = " .$_GET['id']);
+$statement->execute();
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    $content = $row['content'];
+    echo "$content";
+}
+
+
+
 
 
 if(isset($_POST['post_comment'])){
     $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
     $statement = $db->prepare($Query);
     $statement->execute();
-
-}//change this to insert into comment table.
+}
+//change this to insert into comment table.
 //run query that runs post content SELECT CONTENT FROM POST WHERE POST_ID = $_GET[POST_ID]
 //ECHO THE CONTENT AT TOP
 
