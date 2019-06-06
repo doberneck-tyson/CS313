@@ -22,8 +22,9 @@ if(isset($_POST['title'])){
     $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
-}
-
+}//change this to inset into comment table.
+//run query that runs post content SELECT CONTENT FROM POST WHERE POST_ID = $_GET[POST_ID]
+//ECHO THE CONTENT AT TOP
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>

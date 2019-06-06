@@ -25,9 +25,17 @@ if(isset($_POST['title'])){
 }
 
 if(isset($_GET["id"])) {
+    while($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        $section_id = $row['section_id'];
+        $section_name = $row['section_name'];
+        $section_description = $row['section_description'];
+        echo "This is the section name:";
+        echo "{$section_name}";
+    }
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
 <div>
-
+    Welcome to the category. Feel free to post any relevant material here having to do with 
     Title <input type="text" name="title"><br><br>
     Content<input type="text" name="content">
     <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
