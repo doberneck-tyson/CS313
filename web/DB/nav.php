@@ -30,7 +30,8 @@ $statement->execute();
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     $section_name = $row['section_name'];
-    echo "$Query";
+    $post_id = $row['post_id'];
+    echo "$post_id";
     echo "Welcome to the ";
     echo "<strong>$section_name</strong>";
     echo " category. Feel free to post any stories relating to the " . $section_name . " genre";
