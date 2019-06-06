@@ -49,17 +49,14 @@ if(isset($_GET["id"])) {
             echo "it worked";
         }
     }
-    $statement = $db->prepare("SELECT section_id, section_name, section_description FROM SECTION ");
+    $statement = $db->prepare("SELECT section_name FROM SECTION ");
     $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-        echo 'This is the genre:';
-        $section_id = $row['section_id'];
+        echo 'The section name is: ';
         $section_name = $row['section_name'];
-        $section_description = $row['section_description'];
-
-        echo "<p><a href='nav.php?id=". $section_id."'> {$section_name}</a>, {$section_description}<p>";
+        echo "{$section_name}";
     }
 }
 
