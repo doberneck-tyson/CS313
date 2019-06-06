@@ -18,15 +18,7 @@ catch (PDOException $ex)
     die();
 }
 
-$statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
-$statement->execute();
-while($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-    $section_name = $row['section_name'];
-    echo 'Welcome to the ',
-    "{$section_name}",
-    'category. Feel free to post any relevant stories relating to this category.';
-}
+
 
 if(isset($_POST['title'])){
     $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
@@ -56,7 +48,15 @@ if(isset($_GET["id"])) {
             echo "it worked";
         }
     }
-
+    $statement = $db->prepare("SELECT section_name FROM SECTION WHERE section_id = " .$_GET['id']);
+    $statement->execute();
+    while($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        $section_name = $row['section_name'];
+        echo 'Welcome to the ',
+        "{$section_name}",
+        'category. Feel free to post any relevant stories relating to this category.';
+    }
 }
 
 
