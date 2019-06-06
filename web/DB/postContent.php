@@ -30,7 +30,7 @@ if(isset($_GET["id"])) {
 <div>
 
     Content<input type="text" name="content">
-    <button type="submit" name="submit" value="' . $_GET["post_id"] . '">Submit</button>
+    <button type="submit" name="submit" placeholder="Leave a comment" value="' . $_GET["post_id"] . '">Submit</button>
 </div>
 
 </form>';
