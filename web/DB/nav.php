@@ -54,8 +54,8 @@ if(isset($_GET["id"])) {
     {
         $section_name = $row['section_name'];
         echo 'Welcome to the ',
-        "{$section_name}",
-        'category. Feel free to post any relevant stories relating to this category.';
+        "<strong>{$section_name}</strong>",
+        ' category. Feel free to post any relevant stories relating to this category.';
     }
 }
 
