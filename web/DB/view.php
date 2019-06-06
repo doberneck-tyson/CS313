@@ -50,7 +50,6 @@ $statement->execute();
 
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-    echo 'This is the genre:';
     $section_id = $row['section_id'];
     $section_name = $row['section_name'];
     $section_description = $row['section_description'];
