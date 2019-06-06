@@ -31,7 +31,7 @@ $statement->execute();
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     $section_name = $row['section_name'];
-    echo "Welcome to the " , "<strong>{$section_name}</strong>" , " category. Feel free to post any relevant stories relating to the " , $section_name , " genre";
+    echo "Welcome to the " . "<strong>{$section_name}</strong>" . " category. Feel free to post any relevant stories relating to the " . $section_name . " genre";
 }
 
 if(isset($_GET["id"])) {
@@ -51,7 +51,7 @@ if(isset($_GET["id"])) {
         $content = $row['content'];
         $post_id = $row['post_id'];
 
-        echo "<p><a href='postContent.php?id=".$_GET['id']."&post_id=".$post_id."'> $content</a><p>";
+        echo "<p><a href='postContent.php?id=".$_GET['id']."&post_id=".$post_id."'> $title</a><p>";
         if(isset($_GET['post_id'])&& $_GET['post_id']== $post_id){
             echo "it worked";
         }

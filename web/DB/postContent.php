@@ -26,15 +26,15 @@ if(isset($_POST['title'])){
 //run query that runs post content SELECT CONTENT FROM POST WHERE POST_ID = $_GET[POST_ID]
 //ECHO THE CONTENT AT TOP
 
-if(isset($_POST['content'])){
-    $Query = "SELECT CONTENT FROM POST WHERE post_id = " .$_GET['post_id'];
-    $statement = $db->prepare($Query);
-    $statement->execute();
+$Query = ("SELECT CONTENT FROM POST WHERE POST_ID =" .$_GET['POST_ID']);
+$statement->execute();
 
-    while($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-        $content = $row['content'];
-        echo $content;
-    }
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    $content = $row['content'];
+
+    echo "{content}";
+
 }
 
 
