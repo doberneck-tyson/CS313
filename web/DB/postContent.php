@@ -36,9 +36,6 @@ if(isset($_POST['post_comment'])){
     $statement->execute();
 }
 
-
-
-
 //Leave a comment box
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
@@ -48,18 +45,15 @@ if(isset($_GET["id"])) {
 </div>
 
 </form>';
+
+
 $statement = $db->prepare("SELECT post_comment FROM COMMENT");
 $statement->execute();
 
-echo post_comment;
-
-//while($row = $statement->fetch(PDO::FETCH_ASSOC))
-//{
-//    $comment = $row['post_comment'];
-//    echo $comment;
-//}
-
-
-
+    while($row = $statement->fetch(PDO::FETCH_ASSOC))
+    {
+        $comment = $row['post_comment'];
+        echo $comment;
+    }
 
 }
