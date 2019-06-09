@@ -31,6 +31,10 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
 
+
+
+
+
 //posting a comment
 if(isset($_POST['post_comment'])){
     $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
@@ -47,12 +51,11 @@ if(isset($_POST['post_comment'])){
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
-    <input type="text" placeholder="Leave a comment" name="content">
-    <button type="submit" name="submit"  value="' . $_GET["post_id"] . '">Submit</button>
+    <input type="text" placeholder="Leave a comment" name="post_content">
+    <button type="submit" name="submit"  value="' . $_GET["post_comment"] . '">Submit</button>
 </div>
 
 </form>';
-
 $statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE postcom = " .$_GET['post_id']);
 $statement->execute();
 
