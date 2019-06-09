@@ -38,7 +38,7 @@ if(isset($_POST['post_comment'])){
 
 //Leave a comment box
 if(isset($_GET["id"])) {
-    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
+    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'">
 <div>
     Post Comment<input type="text" name="post_comment">
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
