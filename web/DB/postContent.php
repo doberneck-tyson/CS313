@@ -29,21 +29,13 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 }
 
 
-
-
-
-
-
-
 //posting a comment
 if(isset($_POST['post_comment'])){
     $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
-//change this to insert into comment table.
-//run query that runs post content SELECT CONTENT FROM POST WHERE POST_ID = $_GET[POST_ID]
-//ECHO THE CONTENT AT TOP
+
 
 
 
@@ -51,8 +43,8 @@ if(isset($_POST['post_comment'])){
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
-    <input type="text" placeholder="Leave a comment" name="post_content">
-    <button type="submit" name="submit"  value="' . $_GET["post_comment"] . '">Submit</button>
+    <input type="text" placeholder="Leave a comment" name="post_comment">
+    <button type="submit" name="post_comment"  value="' . $_GET["post_comment"] . '">Submit</button>
 </div>
 
 </form>';
@@ -61,8 +53,8 @@ $statement->execute();
 
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
-    $content = $row['post_comment'];
-    echo $content;
+    $comment = $row['post_comment'];
+    echo $comment;
 }
 
 
