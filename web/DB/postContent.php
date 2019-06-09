@@ -30,11 +30,15 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 
 //posting a comment
-if(isset($_POST['post_comment'])){
-    $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
+if(isset($_POST['title'])){
+    $Query = "INSERT INTO comment(post_comment, comment_id) VALUES ('".$_POST['post_comment']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
+
+//error handling..
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
 
 //Leave a comment box
 if(isset($_GET["id"])) {
