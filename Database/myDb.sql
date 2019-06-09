@@ -42,6 +42,7 @@ CREATE TABLE Post(
     FOREIGN KEY (section_id) REFERENCES Section(section_id)
 );
 
+
 CREATE TABLE Comment(
     post_comment VARCHAR(250),
     comment_id INT,
