@@ -31,27 +31,29 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 //posting a comment
 if(isset($_POST['post_comment'])){
-    $Query = "INSERT INTO comment(post_comment, comment_id) VALUES ('".$_POST['post_comment']."',".$_POST['comment_id'].")";
+    $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."',".$_POST['comment_id'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
 
 //Leave a comment box
 if(isset($_GET["id"])) {
-    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'">
+    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
     Post Comment<input type="text" name="post_comment">
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
 </div>
 
 </form>';
+
+
 $statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['id']);
 $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
         $post_comment = $row['post_comment'];
-        $comment_id = $row['comment_id'];
+
         echo $post_comment;
     }
 
