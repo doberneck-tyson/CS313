@@ -24,13 +24,13 @@ error_reporting(E_ALL | E_STRICT);
 
 //posting a comment
 if(isset($_POST['title'])){
-    $Query = "INSERT INTO comment(post_comment, comment_id) VALUES ('".$_POST['post_comment']."',".$_POST['submit'].")";
+    $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
 
 
-//Display content
+//Display content DO NOT CHANGE ANYTHING
 $statement = $db->prepare("SELECT content FROM POST WHERE post_id = " .$_GET['post_id']);
 $statement->execute();
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
@@ -38,7 +38,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $content = $row['content'];
     echo "$content";
 }
-
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
@@ -51,8 +51,8 @@ if(isset($_GET["id"])) {
 </div>
 
 </form>';
-$statement = $db->prepare("SELECT post_comment FROM COMMENT" );
-//WHERE comment_id = " .$_GET['id']
+
+$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['id'] );
 $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
