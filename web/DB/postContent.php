@@ -31,7 +31,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 //posting a comment
 if(isset($_POST['post_comment'])){
-    $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."',".$_POST['comment_id'].")";
+    $Query = "INSERT INTO comment(post_comment, comment_id) VALUES ('".$_POST['post_comment']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
@@ -45,16 +45,15 @@ if(isset($_GET["id"])) {
 </div>
 
 </form>';
-
-
 $statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['id']);
 $statement->execute();
 
-    while($row = $statement->fetch(PDO::FETCH_ASSOC))
-    {
-        $post_comment = $row['post_comment'];
-
-        echo $post_comment;
-    }
+//    while($row = $statement->fetch(PDO::FETCH_ASSOC))
+//    {
+//        $post_comment = $row['post_comment'];
+//        $comment_id = $row['comment_id'];
+//
+//        echo $post_comment;
+//    }
 
 }
