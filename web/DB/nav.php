@@ -34,9 +34,8 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     $section_name = $row['section_name'];
 
-    echo "Welcome to the ";
     echo "<strong>$section_name</strong>";
-    echo " category. Feel free to post any stories relating to the " . $section_name . " genre";
+    echo " <strong>category.</strong> Feel free to post any stories relating to the " . $section_name . " genre";
 }
 
 
