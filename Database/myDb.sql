@@ -30,7 +30,9 @@ INSERT INTO Section (section_name, section_description) VALUES ('History', 'Anyt
 CREATE TABLE Comment(
     post_comment VARCHAR(250),
     postcom INT,
-    FOREIGN KEY (postcom) REFERENCES Post(post_id)
+    FOREIGN KEY (postcom) REFERENCES Post(post_id),
+    section_id INT,
+    post_id SERIAL PRIMARY KEY
 );
 
 INSERT INTO Comment (post_comment) VALUES ('THIS IS MY COMMENT');
