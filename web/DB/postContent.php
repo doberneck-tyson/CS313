@@ -31,7 +31,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 //posting a comment
 if(isset($_POST['post_comment'])){
-    $Query = "INSERT INTO comment(post_comment, comment_id) VALUES ('".$_POST['post_comment']."',".$_POST['comment_id'].")";
+    $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
