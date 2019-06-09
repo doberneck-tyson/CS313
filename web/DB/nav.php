@@ -35,7 +35,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     $section_name = $row['section_name'];
 
     echo "<strong>$section_name</strong>";
-    echo " <strong>category.</strong> Feel free to post any stories relating to the " . $section_name . " genre";
+    echo " <strong>Category:</strong> Feel free to post any stories relating to the " . $section_name . " genre";
 }
 
 
@@ -46,7 +46,8 @@ if(isset($_GET["id"])) {
     <br><br>
         Title <input type="text" name="title"><br><br>
         Content<input type="text" name="content">
-        <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button>
+        <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button><br><br>
+        <h3>Click on the titles below to read stories in this category!</h3>
     </div>
 </form>';
     $statement = $db->prepare("SELECT title, content, post_id FROM POST WHERE section_id = " .$_GET['id']);
