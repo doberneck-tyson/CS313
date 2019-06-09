@@ -31,9 +31,8 @@ if(isset($_POST['title'])){
 
 
 //Display content
-$statement = $db->prepare("SELECT content FROM POST WHERE section_id = " .$_GET['post_id']);
+$statement = $db->prepare("SELECT content FROM POST WHERE post_id = " .$_GET['post_id']);
 $statement->execute();
-
 while($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
     $content = $row['content'];
