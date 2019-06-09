@@ -47,13 +47,13 @@ if(isset($_GET["id"])) {
 </form>';
 
 
-$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE post_id = " .$_GET['post_id']);
+$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['id']);
 $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
     {
-        $comment = $row['post_comment'];
-        echo $comment;
+        $post_comment = $row['post_comment'];
+        echo $post_comment;
     }
 
 }

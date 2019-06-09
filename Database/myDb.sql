@@ -27,13 +27,6 @@ INSERT INTO Section (section_name, section_description) VALUES ('Horror' , 'Post
 INSERT INTO Section (section_name, section_description) VALUES ('History', 'Anything related to World History you find interesting'),
 ('Funny','Will it make me LOL? '),('Campfire','Any stores you feel could be told at a campfire');
 
-CREATE TABLE Comment(
-    post_comment VARCHAR(250),
-    postcom INT,
-    FOREIGN KEY (postcom) REFERENCES Post(post_id),
-    section_id INT,
-    post_id SERIAL PRIMARY KEY
-);
 
 INSERT INTO Comment (post_comment) VALUES ('THIS IS MY COMMENT');
 
@@ -46,7 +39,13 @@ CREATE TABLE Post(
     user_id INT FOREIGN KEY,
     votes INT
     section_id INT,
-    FOREIGN KEY (section_id) REFERENCES Section(section_id);
+    FOREIGN KEY (section_id) REFERENCES Section(section_id)
+);
+
+CREATE TABLE Comment(
+    post_comment VARCHAR(250),
+    comment_id INT,
+    FOREIGN KEY (comment_id) REFERENCES Post(post_id)
 );
 
 INSERT INTO StorytimeAdmin (username,password, display_name) VALUES ('tyson','pass', 'TforTyson');
