@@ -47,7 +47,7 @@ if(isset($_GET["id"])) {
 </form>';
 
 
-$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE section_id = " .$_GET['id']);
+$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE post_id = " .$_GET['post_id']);
 $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
