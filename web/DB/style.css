@@ -1,5 +1,6 @@
 h1 {
     color: black;
+    font-size: large;
 }
 
 body {
@@ -8,5 +9,11 @@ body {
 }
 
 p {
+    font-size: large;
     color: red;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    margin: 5px;
+    padding: 5px;
 }
