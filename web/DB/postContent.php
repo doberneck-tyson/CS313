@@ -32,7 +32,7 @@ catch (PDOException $ex)
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
-echo "Read the post below";
+
 //error handling..
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
@@ -63,6 +63,8 @@ if(isset($_GET["id"])) {
 <div>
     Post Comment<input type="text" name="submit">
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
+    
+    <h3><u>Content of the story is below!</u></h3>
 </div>
 
 </form>';
