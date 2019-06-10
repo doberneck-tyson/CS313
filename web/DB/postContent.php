@@ -61,7 +61,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'">
 <div>
-    Post Comment<input type="text" name="submit">
+    Post Comment(not currently working) <input type="text" name="submit">
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
     
     <h3><u>Content of the story is below!</u></h3>
