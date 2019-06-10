@@ -1,5 +1,6 @@
 <?php
 
+include("style.css");
 try
 {
     $dbUrl = getenv('DATABASE_URL');
