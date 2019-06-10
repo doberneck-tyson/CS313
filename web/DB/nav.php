@@ -60,7 +60,7 @@ if(isset($_GET["id"])) {
     <div>
     <br><br>
         Title <br><input type="text" name="title"><br><br>
-        Content<br><textarea rows="5" cols="50" name="content"></textarea>
+        Content<br><textarea rows="5" cols="50" name="content"></textarea><br>
         <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button><br><br>
         <h3>Click on the titles below to read stories in this category!</h3>
     </div>
