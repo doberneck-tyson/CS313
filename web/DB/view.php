@@ -39,8 +39,8 @@ error_reporting(E_ALL | E_STRICT);
     <title>Storytime</title>
 </head>
 <body>
-
-<h1> <u>Storytime</u></h1><br>
+<br>
+<h1> <u>Storytime</u></h1>
 <h3><u>A place for story tellers to tell their tales.</u></h3>
 
 

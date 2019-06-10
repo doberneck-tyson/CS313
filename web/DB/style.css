@@ -1,6 +1,7 @@
 h1 {
     color: black;
     font-family: helvetica;
+    margin-top: 10px;
 
 }
 
@@ -15,7 +16,6 @@ p {
     border-color: black;
     border-width: 1px;
     border-style: solid;
-    margin: 50%;
     padding: 5px;
     font-family: helvetica;
 
