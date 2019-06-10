@@ -54,7 +54,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "$content";
 }
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+echo "Read the post below";
 
 
 //Leave a comment box
