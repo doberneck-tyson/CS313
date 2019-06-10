@@ -13,9 +13,6 @@ body {
 p {
     font-size: large;
     color: black;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
     padding: 5px;
     font-family: helvetica;
 
