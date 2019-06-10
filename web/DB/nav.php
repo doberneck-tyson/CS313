@@ -59,8 +59,8 @@ if(isset($_GET["id"])) {
     echo '<form method="post" action="nav.php?id='.$_GET['id'].'">
     <div>
     <br><br>
-        Title <input type="text" name="title"><br><br>
-        Content<textarea rows="5" cols="50" name="content"></textarea>
+        Title <br><input type="text" name="title"><br><br>
+        Content<br><textarea rows="5" cols="50" name="content"></textarea>
         <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button><br><br>
         <h3>Click on the titles below to read stories in this category!</h3>
     </div>
