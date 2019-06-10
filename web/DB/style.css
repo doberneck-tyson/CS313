@@ -21,3 +21,7 @@ p {
 div {
     font-family: helvetica;
 }
+
+#text {
+    font-color: red;
+}
