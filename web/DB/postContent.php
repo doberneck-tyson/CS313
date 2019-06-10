@@ -32,7 +32,7 @@ catch (PDOException $ex)
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
-
+echo "Read the post below";
 //error handling..
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
@@ -54,7 +54,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "$content";
 }
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-echo "Read the post below";
+
 
 
 //Leave a comment box
