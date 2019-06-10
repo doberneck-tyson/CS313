@@ -40,7 +40,8 @@ error_reporting(E_ALL | E_STRICT);
 </head>
 <body>
 
-<h1> Storytime</h1>
+<h1> <u>Storytime</u></h1><br>
+<h3><u>A place for story tellers to tell their tales.</u></h3>
 
 
 
