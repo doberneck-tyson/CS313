@@ -23,7 +23,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
         if (password_verify($password, $hashedPasswordFromDB))
         {
             $_SESSION['username'] = $username;
-            header("Location: home.php");
+            header("Location: view.php");
             die(); //
         }
         else

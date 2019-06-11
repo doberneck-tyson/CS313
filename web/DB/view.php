@@ -41,7 +41,8 @@ error_reporting(E_ALL | E_STRICT);
 <body>
 <br>
 <h1> <u>Storytime</u></h1>
-<h3><u>A place for story tellers to tell their tales.</u></h3>
+<h3><u>A place for story tellers to tell their tales.</u></h3><br>
+Your username is: <?= $username ?><br /><br />
 
 
 
