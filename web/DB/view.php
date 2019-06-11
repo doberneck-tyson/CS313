@@ -1,5 +1,17 @@
 <?php
 
+session_start();
+if (isset($_SESSION['username']))
+{
+    $username = $_SESSION['username'];
+}
+else
+{
+    header("Location: signIn.php");
+    die();
+}
+
+
 try
 {
     $dbUrl = getenv('DATABASE_URL');
