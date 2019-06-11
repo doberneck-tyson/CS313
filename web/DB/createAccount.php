@@ -1,9 +1,5 @@
 <?php
 
-// If you have an earlier version of PHP (earlier than 5.5)
-// You need to download and include password.php.
-//require("password.php");
-
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
@@ -15,6 +11,7 @@ if (!isset($username) || $username == ""
     || !isset($display_name) || $display_name == "")
 {
     header("Location: signUp.php");
+    echo "Something was left blank!";
     die();
 }
 
@@ -34,6 +31,5 @@ $statement->execute();
 $statement->bindValue(':display_name', $display_name);
 $statement->execute();
 
-// finally, redirect them to the sign in page
 header("Location: signIn.php");
 die();

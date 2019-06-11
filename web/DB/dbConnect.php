@@ -7,7 +7,7 @@ try {
     $dbUrl = getenv('DATABASE_URL');
     if (!isset($dbUrl) || empty($dbUrl)) {
 
-        $dbUrl = "postgres://StorytimeUser:password@localhost:5432/StorytimeUser";
+        $dbUrl = "postgres://username:password@localhost:5432/StorytimeUser";
 
 
     }
