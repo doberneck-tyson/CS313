@@ -2,7 +2,11 @@
 
 // If you have an earlier version of PHP (earlier than 5.5)
 // You need to download and include password.php.
-require("password.php");
+//require("password.php");
+
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 
 $username = $_POST['txtUser'];
 $password = $_POST['txtPassword'];
