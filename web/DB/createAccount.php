@@ -19,7 +19,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 require("dbConnect.php");
 $db = get_db();
-$query = 'INSERT INTO StorytimeUser(username, password, display_name) VALUES(:username, :password, :display_name)';
+$query = 'INSERT INTO StorytimeUser(username, password) VALUES(:username, :password)';
 $statement = $db->prepare($query);
 $statement->bindValue(':username', $username);
 
