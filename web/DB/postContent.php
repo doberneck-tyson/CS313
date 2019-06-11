@@ -1,3 +1,16 @@
+<?php
+session_start();
+if (isset($_SESSION['username']))
+{
+    $username = $_SESSION['username'];
+}
+else
+{
+    header("Location: signIn.php");
+    die();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -65,6 +78,9 @@ if(isset($_GET["id"])) {
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
     
     <h3><u>Content of the story is below!</u></h3>
+    
+    Regarding this post, user <?= $username ?> said:<br /><br />
+
 </div>
 
 </form>';
