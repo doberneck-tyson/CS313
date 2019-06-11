@@ -67,10 +67,6 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
         <label for="txtPassword">Password</label>
         <br /><br />
 
-        <input type="text" id="txtName" name="txtName" placeholder="Display Name">
-        <label for="txtName">Display Name</label>
-        <br><br>
-
         <input type="submit" value="Sign In" />
 
     </form>

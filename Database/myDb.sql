@@ -14,8 +14,7 @@ CREATE TABLE StorytimeAdmin(
 CREATE TABLE StorytimeUser(
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL,
-    display_name VARCHAR(100) NOT NULL
+    password VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Section(
