@@ -51,3 +51,4 @@ CREATE TABLE Comment(
 
 INSERT INTO StorytimeAdmin (username,password, display_name) VALUES ('tyson','pass', 'TforTyson');
 INSERT INTO StorytimeUser (username,password,display_name) VALUES ('tyson','pass','TforTyson');
+
