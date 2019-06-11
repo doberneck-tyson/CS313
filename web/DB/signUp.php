@@ -24,6 +24,10 @@ error_reporting(E_ALL | E_STRICT);
         <label for="txtPassword">Password</label>
         <br /><br />
 
+        <input type="text" id="txtName" name="txtName" placeholder="Display Name">
+        <label for="txtName">Display Name</label>
+        <br><br>
+
         <input type="submit" value="Create Account" />
 
     </form>
