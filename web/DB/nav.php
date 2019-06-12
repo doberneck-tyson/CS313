@@ -63,6 +63,7 @@ if(isset($_GET["id"])) {
         Title <br><input type="text" name="title"><br><br>
         Content<br><textarea rows="5" cols="50" name="content"></textarea><br>
         <button type="submit" name="submit" value="' . $_GET["id"] . '">Submit</button><br><br>
+        <a href="./DB/view.php">Back to Home</a>
         <h3>Click on the titles below to read stories in this category!</h3>
     </div>
 </form>';
