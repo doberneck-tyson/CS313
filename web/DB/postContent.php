@@ -51,7 +51,7 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 
 //posting a comment
-if(isset($_POST['title'])){
+if(isset($_POST['comment'])){
     $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
     $statement = $db->prepare($Query);
     $statement->execute();
@@ -72,9 +72,9 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 //Leave a comment box
 if(isset($_GET["id"])) {
-    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'">
+    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'>
 <div>
-    Post Comment(not currently working) <input type="text" name="submit">
+    Post Comment(not currently working) <input type="text" name="comment">
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
     
     <h3><u>Content of the story is below!</u></h3>
@@ -85,7 +85,7 @@ if(isset($_GET["id"])) {
 
 </form>';
 
-$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['id'] );
+$statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['post_id'] );
 $statement->execute();
 
     while($row = $statement->fetch(PDO::FETCH_ASSOC))
