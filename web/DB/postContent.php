@@ -84,7 +84,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "$content";
 }
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-echo "<br><br><br>";
+echo "<br><br><br><u>Comments</u>";
 
     $statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['post_id'] );
 $statement->execute();
