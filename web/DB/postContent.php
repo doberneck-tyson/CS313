@@ -58,15 +58,6 @@ if(isset($_POST['comment'])){
 }
 
 
-//Display content DO NOT CHANGE ANYTHING
-$statement = $db->prepare("SELECT content FROM POST WHERE post_id = " .$_GET['post_id']);
-$statement->execute();
-while($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-    $content = $row['content'];
-    echo "$content";
-}
-//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
 
@@ -78,9 +69,6 @@ if(isset($_GET["id"])) {
     <button type="submit" name="submit"  value="' . $_GET["post_id"] . '">Submit</button>
     
     <h3><u>Content of the story is below!</u></h3>
-    
-    Regarding this post, user <?= $username ?> said:<br /><br />
-
 </div>
 
 </form>';
@@ -96,3 +84,14 @@ $statement->execute();
     }
 
 }
+
+
+//Display content DO NOT CHANGE ANYTHING
+$statement = $db->prepare("SELECT content FROM POST WHERE post_id = " .$_GET['post_id']);
+$statement->execute();
+while($row = $statement->fetch(PDO::FETCH_ASSOC))
+{
+    $content = $row['content'];
+    echo "$content";
+}
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
