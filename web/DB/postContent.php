@@ -52,7 +52,7 @@ error_reporting(E_ALL | E_STRICT);
 
 //posting a comment
 if(isset($_POST['comment'])){
-    $Query = "INSERT INTO comment(post_comment comment_id) VALUES ('".$_POST['comment']."',".$_POST['submitK'].")";
+    $Query = "INSERT INTO comment(post_comment comment_id) VALUES ('".$_POST['comment']."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
