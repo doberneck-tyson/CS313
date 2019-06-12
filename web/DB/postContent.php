@@ -72,7 +72,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
 
 //Leave a comment box
 if(isset($_GET["id"])) {
-    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'>
+    echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
     Post Comment(not currently working) <input type="text" name="comment">
     <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
