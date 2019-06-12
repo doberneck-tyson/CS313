@@ -22,3 +22,7 @@ div {
     font-family: helvetica;
 }
 
+input[type=text] {
+    background-color: aliceblue;
+}
+
