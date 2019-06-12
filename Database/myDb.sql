@@ -32,11 +32,8 @@ INSERT INTO Comment (post_comment) VALUES ('THIS IS MY COMMENT');
 
 CREATE TABLE Post(
     post_id SERIAL PRIMARY KEY,
-    title VARCHAR(30),
-    content VARCHAR(255),
-    link VARCHAR(255),
-    user_id INT FOREIGN KEY,
-    votes INT
+    title VARCHAR(50000),
+    content VARCHAR(100000),
     section_id INT,
     FOREIGN KEY (section_id) REFERENCES Section(section_id)
 );

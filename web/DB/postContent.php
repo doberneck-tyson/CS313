@@ -65,7 +65,8 @@ if(isset($_POST['comment'])){
 if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
-    Post Comment(not currently working) <input type="text" name="comment">
+    Post Comment <textarea name="comment" id="comment" rows="3" cols="40"></textarea>
+
     <button type="submit" name="submit"  value="' . $_GET["post_id"] . '">Submit</button>
     
     <h3><u>Content of the story is below!</u></h3>
@@ -83,7 +84,7 @@ while($row = $statement->fetch(PDO::FETCH_ASSOC))
     echo "$content";
 }
 //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+echo "<br><br><br>";
 
     $statement = $db->prepare("SELECT post_comment FROM COMMENT WHERE comment_id = " .$_GET['post_id'] );
 $statement->execute();
