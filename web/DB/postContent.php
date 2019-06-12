@@ -52,7 +52,7 @@ error_reporting(E_ALL | E_STRICT);
 
 //posting a comment
 if(isset($_POST['comment'])){
-    $Query = "INSERT INTO comment(post_comment) VALUES ('".$_POST['post_comment']."')";
+    $Query = "INSERT INTO comment(post_comment comment_id) VALUES ('".$_POST['comment']."',".$_POST['submitK'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }
@@ -75,7 +75,7 @@ if(isset($_GET["id"])) {
     echo '<form method="post" action="postContent.php?id='.$_GET['id'].'&post_id='.$_GET['post_id'].'">
 <div>
     Post Comment(not currently working) <input type="text" name="comment">
-    <button type="submit" name="submit"  value="' . $_GET["id"] . '">Submit</button>
+    <button type="submit" name="submit"  value="' . $_GET["post_id"] . '">Submit</button>
     
     <h3><u>Content of the story is below!</u></h3>
     
