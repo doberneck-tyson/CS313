@@ -94,6 +94,7 @@ $statement->execute();
         $post_comment = $row['post_comment'];
 
         echo $post_comment;
+        echo "<br><br>";
     }
 
 }
