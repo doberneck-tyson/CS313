@@ -35,7 +35,8 @@ catch (PDOException $ex)
 
 //initiates query
 if(isset($_POST['title'])){
-    $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$_POST['content']."',".$_POST['submit'].")";
+    $var=str_replace("'","''", $_POST['content']);
+    $Query = "INSERT INTO post(title, content, section_id) VALUES ('".$_POST['title']."','".$var."',".$_POST['submit'].")";
     $statement = $db->prepare($Query);
     $statement->execute();
 }

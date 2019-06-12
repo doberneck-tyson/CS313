@@ -9,6 +9,7 @@ else
     header("Location: signIn.php");
     die();
 }
+
 ?>
 
 <!doctype html>
