@@ -1,18 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <title>Storytime</title>
-</head>
-<body>
-</body>
-</html>
-
 <?php
 
 
@@ -57,7 +42,8 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sign In</title>
+    <title>Storytime | Sign in</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -70,7 +56,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
     }
     ?>
 
-    <h1>Please sign in below:</h1>
+    <h1>Welcome to Storytime! Please sign in below:</h1>
 
     <form id="mainForm" action="signIn.php" method="POST">
 
